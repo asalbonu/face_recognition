@@ -1,0 +1,45 @@
+.card { max-width:900px; margin:auto; background: linear-gradient(145deg, #ffffff, #e0f7ff);       
+        padding:20px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.1); margin-bottom:25px; margin-top: 50px;}
+h2 { margin-top:0; color:#0366d6; text-align:center; }
+canvas { background:#fdfdfd; border-radius:12px; }
+.controls { text-align:center; margin-bottom:15px; }
+select, button { padding:6px 10px; margin:5px; border-radius:8px; border:1px solid #c0e0ff; background:#d9f0ff; color:#0366d6; font-weight:bold; }
+button:hover { background:#a8e0ff; cursor:pointer; }
+#classLegend div { font-weight:bold; }
+.top3Card { background: #ffffff33; border-radius:10px; padding:10px 15px; min-width:80px; border:1px solid; }
+
+ h1 {
+      text-align: center;
+      color: #333;
+    }
+    .table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 95%;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .th, .td {
+      padding: 12px 15px;
+      text-align: center;
+    }
+    .th {
+      background: #4a69bd;
+      color: white;
+      font-size: 16px;
+    }
+    .tr:nth-child(even) {
+      background: #f1f2f6;
+    }
+    .tr:hover {
+      background: #dfe4ea;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+    

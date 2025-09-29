@@ -1,0 +1,7 @@
+{
+	"recognition_url": "http://127.0.0.1:5500/recognize",
+	"db_host": "localhost",
+	"db_user": "root",
+	"db_password": "root",
+	"db_database": "face_recognition"
+}

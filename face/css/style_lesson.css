@@ -1,0 +1,79 @@
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+   
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    animation: fadeIn 0.8s ease;
+}
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.header h1 {
+    font-size: 26px;
+    margin: 0;
+    color: #2c3e50;
+}
+.header span {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+}
+form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+select, button {
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+select {
+    background: #ecf0f1;
+}
+button {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background: linear-gradient(45deg, #2980b9, #1c5980);
+    transform: scale(1.05);
+}
+.card {
+    padding: 25px;
+    border-radius: 15px;
+    background: #d6eaf8;
+    box-shadow: inset 0 0 8px rgba(41,128,185,0.2);
+    animation: fadeIn 0.6s ease;
+}
+.card h3 {
+    margin-top: 0;
+    color: #1c5980;
+    font-size: 22px;
+}
+.card p {
+    font-size: 16px;
+    margin: 8px 0;
+}
+.break-card {
+    background: #ffeaa7;
+    color: #6d4c41;
+}
+.timeline {
+    margin: 25px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #7f8c8d;
+}
