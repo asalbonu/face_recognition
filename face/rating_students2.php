@@ -1,9 +1,9 @@
     <?php
+session_start();
 $host = "localhost";
 $user = "root";
 $pass = "root";
 $db   = "face_recognition"; 
-session_start();
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) die("Ошибка подключения: " . $conn->connect_error);
 
