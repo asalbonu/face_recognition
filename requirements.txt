@@ -1,0 +1,7 @@
+Flask
+face-recognition
+numpy
+opencv-python
+mysql-connector-python
+requests
+Pillow
