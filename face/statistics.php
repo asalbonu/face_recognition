@@ -1,8 +1,8 @@
 <?php
 $dbHost = "localhost";
-$dbName = "face_recognition";
-$dbUser = "root";
-$dbPass = "root";
+$dbUser = "v98577nf_face";
+$dbPass = "v98577nf_facee";
+$dbName   = "v98577nf_face"; 
 session_start();
 date_default_timezone_set("Asia/Dushanbe"); 
 
@@ -131,10 +131,10 @@ $colors = ['#2196f3','#32cd32','#ff9800','#ff5722','#9c27b0','#00bcd4','#f44336'
     }
     usort($avgPerClass, function($a,$b){ return $b['avg'] <=> $a['avg']; });
     $top3Classes = array_slice($avgPerClass,0,3);
-   $host = "localhost";
-$user = "root";
-$pass = "root";
-$db   = "face_recognition"; 
+ $host = "localhost";
+$user = "v98577nf_face";
+$pass = "v98577nf_facee";
+$db   = "v98577nf_face"; 
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) die("Ошибка подключения: " . $conn->connect_error);

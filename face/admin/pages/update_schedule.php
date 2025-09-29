@@ -1,10 +1,5 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "root";
-$db   = "face_recognition";
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) die("Ошибка подключения: " . $conn->connect_error);
+require_once('config.php');
 
 $msg = "";
 $class_name = 'A';

@@ -1,21 +1,13 @@
 <?php
 if (isset($_GET['id']) || !empty($_GET['id']))
 {
-   $host = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'face';
-$conn = new mysqli($host, $username, $password, $dbname);
-if ($conn->connect_error) { 
-    die('Ошибка подключения к БД: '. $conn->connect_error);
-}
-    
+    require_once('config.php');
     $id = $_GET['id'];
-    $query = "Select * from teachers where id = $id";
+    $query = "Select * from teachers where id = '$id'";
     $result = mysqli_query($conn, $query);
     $rows = mysqli_num_rows($result);
     if($rows <= 0){
-        header('Localtion:index.php?page=3');
+        header('Localtion:index.php?page=11');
     }
     $row = mysqli_fetch_assoc($result);
     
@@ -29,7 +21,7 @@ if ($conn->connect_error) {
             <!-- general form elements -->
             <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Добавление учителя </h3>
+                <h3 class="card-title">Изменение данных учителя </h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -85,7 +77,7 @@ if ($conn->connect_error) {
                     <?php
                     $a = [1,2,'highest'];
                   for($i = 0;$i <3;$i++){
-                    if($a[$i] == $row['subject'])echo "<option value='$a[$i]' selected>$a[$i]</option>";
+                    if($a[$i] == $row['category_of_specialty'])echo "<option value='$a[$i]' selected>$a[$i]</option>";
                     else echo "<option value='$a[$i]'>$a[$i]</option>";
                   }
                   ?>

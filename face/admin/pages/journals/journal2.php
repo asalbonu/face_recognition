@@ -1,12 +1,13 @@
 <?php
-// --- Подключение к БД ---
-$__host="localhost";
-$__login="root";
-$__password = "root";
-$__database = "face_recognition";
+$host = "localhost";
+$user = "v98577nf_face";
+$pass = "v98577nf_facee";
+$db   = "v98577nf_face"; 
+$conn = new mysqli($host, $user, $pass, $db);
+if ($conn->connect_error) { 
+    die('Ошибка подключения к БД: '. $conn->connect_error);
+}
 
-$conn = new mysqli($__host, $__login, $__password, $__database);
-if ($conn->connect_error) die("Нет подключения к БД: " . $conn->connect_error);
 
 function gp($name, $def) {
     if (isset($_POST[$name])) return $_POST[$name];

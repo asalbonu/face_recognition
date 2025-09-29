@@ -10,8 +10,7 @@ $birthday = $_POST['birthday'];
 $gender = $_POST['gender'];
 $grade = $_POST['grade'];
 $class = $_POST['class'];
-$query = "UPDATE `face`.`users`
-set 
+$query = "UPDATE `users`set 
 `name` = '$name',
 `surname` = '$surname',
 `patronymic` = '$patronymic',
@@ -19,7 +18,7 @@ set
 `gender` = '$gender',
 `grade` = '$grade',
 `class` = '$class'
-where `id` = $id";
+where `id` = '$id'";
 $result = mysqli_query($conn, $query);
 
 header('Location: ../../index.php?page=3');

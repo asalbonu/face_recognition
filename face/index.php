@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
-$user = "root";
-$pass = "root";
-$db   = "face_recognition"; 
+$user = "v98577nf_face";
+$pass = "v98577nf_facee";
+$db   = "v98577nf_face"; 
     session_start();
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) die("Ошибка подключения: " . $conn->connect_error);
@@ -121,10 +121,10 @@ $result = $conn->query($sql);
 </div>
 
  <?php 
-   $__host="localhost";
-   $__login="root";
-   $__password = "root";
-   $__database = "face_recognition";
+   $__host = "localhost";
+$__login = "v98577nf_face";
+$__password = "v98577nf_facee";
+$__database   = "v98577nf_face"; 
 
    $mysql = new mysqli($__host, $__login, $__password, $__database);
 

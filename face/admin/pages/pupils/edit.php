@@ -1,11 +1,11 @@
 <?php
 if (isset($_GET['id']) || !empty($_GET['id']))
 {
-   $host = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'face';
-$conn = new mysqli($host, $username, $password, $dbname);
+    $host = "localhost";
+$user = "v98577nf_face";
+$pass = "v98577nf_facee";
+$db   = "v98577nf_face"; 
+$conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) { 
     die('Ошибка подключения к БД: '. $conn->connect_error);
 }
@@ -29,7 +29,7 @@ if ($conn->connect_error) {
             <!-- general form elements -->
             <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Добавление ученика(цы)</h3>
+                <h3 class="card-title">Изменение данных ученика(цы)</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->

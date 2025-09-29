@@ -1,5 +1,6 @@
 <?php
-$mysqli = mysqli_connect("localhost", "root", "root", "face_recognition");
+
+$mysqli = mysqli_connect("localhost", "v98577nf_face", "v98577nf_facee", "v98577nf_face");
 date_default_timezone_set("Asia/Dushanbe"); 
 $lessonTimesShift1 = [
     1 => ['08:00', '08:45'],

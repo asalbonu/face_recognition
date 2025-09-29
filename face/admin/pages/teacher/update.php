@@ -11,7 +11,7 @@ $gender = $_POST['gender'];
 $subject = $_POST['subject'];
 $category_of_specialty = $_POST['category_of_specialty'];
 $age = $_POST['age'];
-$query = "UPDATE `face`.`teachers`
+$query = "UPDATE `teachers`
 set 
 `name` = '$name',
 `surname` = '$surname',

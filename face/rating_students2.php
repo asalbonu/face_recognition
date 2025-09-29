@@ -1,9 +1,10 @@
     <?php
 session_start();
 $host = "localhost";
-$user = "root";
-$pass = "root";
-$db   = "face_recognition"; 
+$user = "v98577nf_face";
+$pass = "v98577nf_facee";
+$db   = "v98577nf_face"; 
+
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) die("Ошибка подключения: " . $conn->connect_error);
 

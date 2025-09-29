@@ -1,3 +1,4 @@
+Для распознования лица
 Flask
 face-recognition
 numpy
@@ -5,3 +6,6 @@ opencv-python
 mysql-connector-python
 requests
 Pillow
+
+Для сайта(прогноз успеваемости)
+pandas

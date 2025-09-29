@@ -1,17 +1,13 @@
 <?php
-// Включаем буферизацию вывода, чтобы header() сработал даже если что-то случайно выводится
-ob_start();
 
-// --- Подключение к БД ---
-$__host = "localhost";
-$__login = "root";
-$__password = "root";
-$__database = "face_recognition";
-
-$conn = new mysqli($__host, $__login, $__password, $__database);
-if ($conn->connect_error) die("Нет подключения к БД: " . $conn->connect_error);
-
-// --- Функция для получения GET/POST параметров ---
+$host = "localhost";
+$user = "v98577nf_face";
+$pass = "v98577nf_facee";
+$db   = "v98577nf_face"; 
+$conn = new mysqli($host, $user, $pass, $db);
+if ($conn->connect_error) { 
+    die('Ошибка подключения к БД: '. $conn->connect_error);
+}
 function gp($name, $def) {
     if (isset($_POST[$name])) return $_POST[$name];
     if (isset($_GET[$name])) return $_GET[$name];
@@ -25,7 +21,7 @@ $subject = gp('subject', 'Русский язык');
 $quarter = (int) gp('quarter', 1);
 $year    = (int) gp('year', date("Y"));
 
-
+// --- Четверти ---
 $quarters = [
   1 => ["start" => "$year-09-01", "end" => "$year-10-31"],
   2 => ["start" => "$year-11-11", "end" => "$year-12-31"],
@@ -52,7 +48,7 @@ if (isset($_POST['grades']) && is_array($_POST['grades'])) {
 
     $visitsData = [];
     if ($studentIds) {
-        $in = implode(',', $studentIds); 
+        $in = implode(',', $studentIds); // безопасно, только числа
         $vsql = "SELECT user_id, DATE(`time`) as day, visit FROM visits WHERE DATE(`time`) BETWEEN '$startDate' AND '$endDate' AND user_id IN ($in)";
         $vres = $conn->query($vsql);
         while ($vr = $vres->fetch_assoc()) {
@@ -98,7 +94,8 @@ if (isset($_POST['grades']) && is_array($_POST['grades'])) {
     $qs = http_build_query([
         'grade' => $grade, 'class' => $class, 'subject' => $subject, 'quarter' => $quarter, 'year' => $year, 'saved' => 1
     ]);
-    header("Location: ".$_SERVER['PHP_SELF']."?$qs");
+    $i = $_SERVER['PHP_SELF'];
+    echo "<script>window.location.href='$i?page=8&$qs';</script>";
     exit;
 }
 
@@ -255,7 +252,11 @@ input.grade-input { width:30px; height:24px; text-align:center; font-size:12px; 
             <td>
               <input class="grade-input" <?= $readonly ?> type="text"
                      name="grades[<?= $uid ?>][<?= $ds ?>]"
-                     value="<?= htmlspecialchars($value) ?>" >
+                     <?php
+                     if($value == 'н/б') echo 'value="н/б">';
+                     else echo "value='$value' >";
+                     ?>
+                    
             </td>
           <?php endforeach; ?>
           <td class="col-avg"><?= $avg !== '' ? $avg : '' ?></td>

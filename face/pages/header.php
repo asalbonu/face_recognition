@@ -4,7 +4,7 @@ if (isset($_GET['lang'])) {
     $_SESSION['lang'] = $_GET['lang'];
 }
 $lang = $_SESSION['lang'] ?? 'ru';
-require '1.php';
+require_once("1.php");
 $year_start = 2025;
 $year_end = 2026;
 $school_year = "$year_start / $year_end";
@@ -59,6 +59,7 @@ $shift = (date("H") < 13) ? "1 смена" : "2 смена";
 if ($current == "Вне уроков") {
     $shift = "Уроки закончились";
 }
+$currentTime = date('H:i:s');
 ?>
 <style>
    body {
@@ -183,7 +184,7 @@ if ($current == "Вне уроков") {
       <a href="rating_student.php"><?= $texts[$lang]['students'] ?></a>
       <div class="dropdown-content">
         <a href="schedule.php"><?= $texts[$lang]['schedule'] ?></a>
-        <a href="student_prediction.php"><?= $texts[$lang]['predict'] ?></a>
+        <a href="1.php"><?= $texts[$lang]['predict'] ?></a>
       </div>
     </div>
     <a href="statistics.php"><?= $texts[$lang]['stats'] ?></a>
@@ -195,8 +196,20 @@ if ($current == "Вне уроков") {
 </div>
 
 <div class="info-bar">
-    <span><?= $texts[$lang]['time'] ?>: <span id="clock"><?=date("H:i:s")?></span></span>
+    <span><?= $texts[$lang]['time'] ?>: <span id="clock"><?=$currentTime?></span></span>
     <span><?= $texts[$lang]['now'] ?>: <?=$current?></span>
     <span><?=$texts[$lang]['shift']?>: <?=$shift?></span>
     <span style="padding-right:13px;"><?=$texts[$lang]['year']?>: <?=$school_year?></span>
 </div>
+
+<script>
+    function updateClock() {
+      let now = new Date();
+      let hours = String(now.getHours()).padStart(2, '0');
+      let minutes = String(now.getMinutes()).padStart(2, '0');
+      let seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock(); 
+  </script>

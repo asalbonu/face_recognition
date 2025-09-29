@@ -3,10 +3,8 @@
 if(isset($_GET["id"]) && !empty($_GET["id"])){
     $id = $_GET["id"];
     require_once('config.php');
-    $query= "delete from users where id = $id";
+    $query= "delete from teachers where id = $id";
     $result = mysqli_query($conn,$query);
-   header('Location: ../../index.php?page=3');
-
+    echo "<script>window.location.href='$i?page=11';</script>";
 }
-
 ?>
